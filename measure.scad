@@ -19,7 +19,7 @@ module peak(start, end, thickn1 = 4, thickn2 = 0.1) {
 //  translate(end) rotate([be,al,]) linear_extrude(0.2) circle(thickn1*5);
 }
 
-module measure(a=[0,0,0],b=[0,0,100],zr=0,xr=90, size=40, peaklen=20, midx=0) {
+module measure(a=[0,0,0],b=[0,0,100], midx=0, zr=0, xr=90, size=20, peaklen=20) {
   d=b-a;
   l=round(norm(d)*10)/10;
   o=peaklen*((b-a)/l);
@@ -44,7 +44,6 @@ module measure(a=[0,0,0],b=[0,0,100],zr=0,xr=90, size=40, peaklen=20, midx=0) {
     if (midx > 0) {
       translate(m2) rotate(zr, [0,0,1]) rotate(xr-90, [1,0,0])
       text(str(midx), size=size/2, halign="center", valign="center");
-      midx=midx + 1;
     }
 
 }
